@@ -5,47 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>เข้าเล่นเกม</title>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
     body {
+      display: flex;
+      justify-content: center;  /* กึ่งกลางแนวนอน */
+      align-items: center;      /* กึ่งกลางแนวตั้ง */
+      background: linear-gradient(135deg, #fff8e1, #ffd54f);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 40px;
-      max-width: 600px;
-      margin: auto;
-      background: #fcffc2;
-      color: #333;
+      color: #e65100;
       text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      background: white;
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 30px 60px;
+      border-radius: 20px;
+      border: 3px solid #f57c00;
+      box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+      box-sizing: border-box;
+    }
+    .container::before {
+      content: "🎮";
+      font-size: 6rem;
+      color: #ffb300;
+      opacity: 0.15;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      font-weight: bold;
     }
     nav {
       position: fixed;
       top: 20px;
       right: 20px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
+      z-index: 10;
     }
     nav a {
-      background-color: #f69132;
+      background-color: #f57c00;
       color: white;
       text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(245, 124, 0, 0.6);
+      transition: background-color 0.3s, box-shadow 0.3s;
     }
     nav a:hover {
-      background-color: #f3a12e;
+      background-color: #ef6c00;
+      box-shadow: 0 4px 12px rgba(239, 108, 0, 0.9);
+    }
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-bottom: 0.3em;
+      text-shadow: 2px 2px 4px #ffa726;
+      position: relative;
+      z-index: 2;
+    }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-shadow: 1px 1px 1px #ffcc80;
+      position: relative;
+      z-index: 2;
     }
     a.game-link {
       display: inline-block;
-      margin-top: 30px;
-      background-color: #43a047;
+      background-color: #f57c00;
       color: white;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      border-radius: 10px;
+      padding: 14px 36px;
+      font-size: 1.3rem;
+      border-radius: 12px;
+      font-weight: 800;
       text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(245, 124, 0, 0.8);
+      transition: background-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      z-index: 2;
     }
     a.game-link:hover {
-      background-color: #2e7d32;
+      background-color: #ef6c00;
+      box-shadow: 0 8px 20px rgba(239, 108, 0, 1);
+    }
+    ul {
+      max-width: 400px;
+      margin: 30px auto 0;
+      padding-left: 20px;
+      text-align: left;
+      color: #e65100;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 1px #ffcc80;
+      position: relative;
+      z-index: 2;
+    }
+    ul li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -55,9 +125,15 @@
     <a href="howto.html">วิธีการเล่นเกม</a>
     <a href="play.html">เข้าเล่นเกม</a>
   </nav>
-  <h2>🎮 เข้าเล่นเกม</h2>
-  <p>กดปุ่มด้านล่างเพื่อเริ่มเล่นเกม</p>
-  <a class="game-link" href="https://ahraina.itch.io/comedu64" target="_blank" rel="noopener noreferrer">เริ่มเล่นเกม</a>
-  <p><li>กด Run Project เพื่อเริ่มเล่นเกมใน tch.io</li></p>
+
+  <div class="container">
+    <h2>🎮 เข้าเล่นเกม</h2>
+    <p>กดปุ่มด้านล่างเพื่อเริ่มเล่นเกม</p>
+    <a class="game-link" href="https://ahraina.itch.io/comedu64" target="_blank" rel="noopener noreferrer">เริ่มเล่นเกม</a>
+    <ul>
+      <li>กด Run Project เพื่อเริ่มเล่นเกมใน itch.io</li>
+    </ul>
+  </div>
+
 </body>
 </html>
